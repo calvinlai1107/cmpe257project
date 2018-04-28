@@ -93,8 +93,7 @@ IMAGE_SIZE = (12, 8)
 
 def run_inference_for_single_image(image, graph):
   with graph.as_default():
-    with tf.Session(config=tf.ConfigProto(log_device_placement=True)) as sess:
-      print(sess.run(sess))
+    with tf.Session() as sess:
       # Get handles to input and output tensors
       ops = tf.get_default_graph().get_operations()
       all_tensor_names = {output.name for op in ops for output in op.outputs}
