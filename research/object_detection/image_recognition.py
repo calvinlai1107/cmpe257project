@@ -175,14 +175,16 @@ if __name__ == "__main__":
       if classes[i] in category_index.keys():
         class_name = category_index[classes[i]]['name']
         if class_name == "stop sign":
+          img = cv2.imread('stopsign.png')
           stopSignFound = True
           print(class_name)
-          cv2.putText(img,'stop sign', 
-            bottomLeftCornerOfText, 
-            font, 
-            fontScale,
-            fontColor,
-            lineType)
+          # cv2.putText(img,'stop sign', 
+          #   bottomLeftCornerOfText, 
+          #   font, 
+          #   fontScale,
+          #   fontColor,
+          #   lineType)
+          # cv2.rectangle(img, (0, 500), (500, 0), (0, 0, 0), -1)
           cv2.imshow("img",img)
     if not stopSignFound:
       cv2.putText(img,'no stop sign!', 
@@ -191,6 +193,7 @@ if __name__ == "__main__":
         fontScale,
         fontColor,
         lineType)
+      cv2.rectangle(img, (0, 510), (510, 0), (0, 0, 0), -1)
       cv2.imshow("img",img)
       print("No stop sign found!")
     stopSignFound = False
