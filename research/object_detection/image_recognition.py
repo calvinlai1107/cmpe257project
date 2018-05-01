@@ -187,15 +187,7 @@ if __name__ == "__main__":
           # cv2.rectangle(img, (0, 500), (500, 0), (0, 0, 0), -1)
           cv2.imshow("img",img)
     if not stopSignFound:
-      cv2.putText(img,'no stop sign!', 
-        bottomLeftCornerOfText, 
-        font, 
-        fontScale,
-        fontColor,
-        lineType)
-      cv2.rectangle(img, (0, 510), (510, 0), (0, 0, 0), -1)
-      cv2.imshow("img",img)
-      print("No stop sign found!")
+      cv2.destroyWindow("img")
     stopSignFound = False
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
